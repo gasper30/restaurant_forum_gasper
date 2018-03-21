@@ -6,7 +6,7 @@ class Admin::RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurants = Restaurant.all
+    @restaurant = Restaurant.new
   end
 
   def create
@@ -19,6 +19,12 @@ class Admin::RestaurantsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @restaurant = Restaurant.find(params[:id])
+  end
+
+
 
   private
 
